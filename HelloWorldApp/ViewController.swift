@@ -9,11 +9,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var greetingButton: UIButton!
+    @IBOutlet var greetingLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        greetingLabel.isHidden = true
+        greetingButton.layer.cornerRadius = 10
     }
 
-
+    @IBAction func greetingButtonPressed() {
+        greetingLabel.isHidden.toggle()
+        greetingButton.setTitle(greetingLabel.isHidden ? "Show greeting" : "Hide greeting", for: .normal)
+    }
+    
 }
 
